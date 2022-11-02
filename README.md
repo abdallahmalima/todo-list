@@ -2,7 +2,7 @@
 
 # Todo List 
 
->Website enable user to create,update,list and update todos
+>Website enable user to create,update,list and remove todos
 
 
 ## Built With
