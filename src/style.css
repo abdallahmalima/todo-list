@@ -37,16 +37,16 @@ svg {
   cursor: pointer;
 }
 
-#todo-form {
-  width: 100%;
-}
-
 .checkbox {
   cursor: pointer;
 }
 
 .trash-icon {
   display: none;
+}
+
+#todo-form {
+  width: 100%;
 }
 
 #todo-form input {
