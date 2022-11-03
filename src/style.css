@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  font-family: 'Poppins', sans-serif;
+  color: gray;
+}
+
+.wrapper {
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.todo-title,
+.todo-input,
+.todo-list ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-inline: 15px;
+}
+
+.todo-list ul li {
+  padding-block: 5px;
+}
+
+.todo-title h1 {
+  font-size: 1em;
+}
+
+svg {
+  align-self: center;
+  cursor: pointer;
+}
+
+#todo-form {
+  width: 100%;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.trash-icon {
+  display: none;
+}
+
+#todo-form input {
+  width: 90%;
+  padding-inline: 11px;
+  padding-block: 5px;
+  border: none;
+}
+
+#todo-form input:focus {
+  outline: none;
+}
+
+.todo-input .form-icon,
+.list-icon {
+  width: 5%;
+}
+
+.todo-title,
+.todo-clear,
+.todo-input {
+  padding-block: 13px;
+}
+
+.todo-clear {
+  background-color: #eee;
+  color: gray;
+  text-align: center;
+  cursor: pointer;
+}
+
+.list-item {
+  display: flex;
+  justify-content: flex-start;
+  gap: 9px;
+  width: 90%;
+  padding: 11px;
+  border: none;
+}
+
+@media all and  (min-width: 768px) {
+  .wrapper {
+    margin: auto;
+    margin-top: 10%;
+    width: 50%;
+  }
+}
