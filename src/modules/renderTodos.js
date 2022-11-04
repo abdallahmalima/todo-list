@@ -4,11 +4,11 @@ import deleteTodo from './deleteTodo';
 import getTodos from './todos';
 import updateTodo from './updateTodo';
 
-
 const renderTodos = () => {
   const todoListContainer = document.querySelector('.todo-list');
-  const todosLists = getTodos().sort((a, b) => a.index - b.index).map(({ completed,description, index }) => (
-    ` <li class="todo-li">
+  const todosLists = getTodos().sort((a, b) => a.index - b.index)
+    .map(({ completed, description, index }) => (
+      ` <li class="todo-li">
         <div class="list-item">
           <input id="${index}" class="checkbox" type="checkbox" ${completed ? 'checked' : ''}>
           <p class="${completed ? 'completed' : ''}">${description}</p>
@@ -20,7 +20,7 @@ const renderTodos = () => {
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
         </svg>
        </li>`
-  )).join('');
+    )).join('');
   todoListContainer.innerHTML = `<ul> ${todosLists} </ul>`;
   updateTodo();
   deleteTodo();

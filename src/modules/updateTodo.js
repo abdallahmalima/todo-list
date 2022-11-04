@@ -46,7 +46,7 @@ const updateTodo = () => {
           const index = treeDotIcon.id;
           updatedTodo = {
             description: updatedTodo.description,
-            completed: todos[index-1].completed,
+            completed: todos[index - 1].completed,
             index: Number(index),
           };
 
