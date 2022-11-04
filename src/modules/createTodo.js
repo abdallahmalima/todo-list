@@ -1,4 +1,3 @@
-/* eslint import/no-cycle: [2, { maxDepth: 1 }] */
 import saveTodo from './saveTodo';
 import getTodos from './todos';
 
