@@ -10,6 +10,10 @@ body {
   color: gray;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 .wrapper {
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -76,6 +80,11 @@ svg {
   color: gray;
   text-align: center;
   cursor: pointer;
+}
+
+.todo-clear:hover {
+  color: black;
+  text-decoration: underline;
 }
 
 .list-item {
