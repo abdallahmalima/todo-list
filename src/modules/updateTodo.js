@@ -46,7 +46,7 @@ const updateTodo = () => {
           const index = treeDotIcon.id;
           updatedTodo = {
             description: updatedTodo.description,
-            completed: updatedTodo.completed,
+            completed: todos[index - 1].completed,
             index: Number(index),
           };
 
@@ -54,7 +54,6 @@ const updateTodo = () => {
             if (todo.index === Number(index)) todo = updatedTodo;
             return todo;
           });
-          console.log(updatedTodos);
           saveTodo(updatedTodos);
           renderTodos();
         };

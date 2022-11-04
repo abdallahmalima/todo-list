@@ -19,11 +19,28 @@
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-Git must be installed on your computer
-### Setup
-Clone the repository
+You must have git installed on your computer
+### Installation
+
+1. Clone the repo by running the command
+   ```sh
+    git clone https://github.com/abdallahmalima/todo-list.git
+   ```
+2. Open the directory of the project
+   ```sh
+   cd todo-list
+   ```
+3. Open the directory of the src
+   ```sh
+   cd src
+   ```
+
+5. Please run the following to render on the browser
+   ```sh
+   npm start
+   ```
 ### Usage
-Open index.html file
+Open index.html inside src folder
 
 
 ## Authors
