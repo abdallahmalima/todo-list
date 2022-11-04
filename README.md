@@ -34,13 +34,13 @@ You must have git installed on your computer
    ```sh
    cd src
    ```
-   
+
 5. Please run the following to render on the browser
    ```sh
    npm start
    ```
 ### Usage
-Open index.html file
+Open index.html inside src folder
 
 
 ## Authors
