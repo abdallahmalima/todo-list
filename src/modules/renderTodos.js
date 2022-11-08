@@ -4,12 +4,12 @@ import registerGraggableEventListeners from './draggableSort';
 import getTodos from './todos';
 import registerUpdateEventListener from './updateTodo';
 
-const registerEventListeners=()=>{
+const registerEventListeners = () => {
   registerUpdateEventListener();
   registerDeleteEventListener();
   registerMarkCompletedEventListener();
   registerGraggableEventListeners();
-}
+};
 
 const renderTodos = () => {
   const todoListContainer = document.querySelector('.todo-list');
