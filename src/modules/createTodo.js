@@ -1,5 +1,6 @@
 import saveTodo from './saveTodo';
 import getTodos from './todos';
+import renderTodos from './renderTodos';
 
 const validated = ({ description }, todos) => {
   description = description.value.trim();
@@ -9,13 +10,18 @@ const validated = ({ description }, todos) => {
   return null;
 };
 
+const resetForm = ({ description }) => {
+  description.value = '';
+};
+
 const addTodo = (createTodoForm) => {
   const todos = getTodos();
   const todo = validated(createTodoForm, todos);
-  todos.push(todo);
   if (todo === null) return;
+  todos.push(todo);
   saveTodo(todos);
-  createTodoForm.description.value = '';
+  resetForm(createTodoForm);
+  renderTodos();
 };
 
 export default addTodo;

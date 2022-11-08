@@ -1,14 +1,21 @@
-import clearCompleted from './clearCompletedTodo';
-import markCompletedTodo from './completeTodo';
-import deleteTodo from './deleteTodo';
+import registerMarkCompletedEventListener from './completeTodo';
+import registerDeleteEventListener from './deleteTodo';
+import registerGraggableEventListeners from './draggableSort';
 import getTodos from './todos';
-import updateTodo from './updateTodo';
+import registerUpdateEventListener from './updateTodo';
+
+const registerEventListeners = () => {
+  registerUpdateEventListener();
+  registerDeleteEventListener();
+  registerMarkCompletedEventListener();
+  registerGraggableEventListeners();
+};
 
 const renderTodos = () => {
   const todoListContainer = document.querySelector('.todo-list');
   const todosLists = getTodos().sort((a, b) => a.index - b.index)
     .map(({ completed, description, index }) => (
-      ` <li class="todo-li">
+      ` <li class="todo-li" draggable="true">
         <div class="list-item">
           <input id="${index}" class="checkbox" type="checkbox" ${completed ? 'checked' : ''}>
           <p class="${completed ? 'completed' : ''}">${description}</p>
@@ -22,10 +29,7 @@ const renderTodos = () => {
        </li>`
     )).join('');
   todoListContainer.innerHTML = `<ul> ${todosLists} </ul>`;
-  updateTodo();
-  deleteTodo();
-  markCompletedTodo();
-  clearCompleted();
+  registerEventListeners();
 };
 
 export default renderTodos;
