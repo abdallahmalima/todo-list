@@ -14,7 +14,7 @@ clearCompletedBtn.addEventListener('click', () => {
   clearCompleted();
 });
 
-insertIcon.addEventListener('click',()=>{
+insertIcon.addEventListener('click', () => {
   addTodo(createTodoForm);
 });
 
