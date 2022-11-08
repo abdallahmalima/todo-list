@@ -2,21 +2,24 @@ import renderTodos from './renderTodos';
 import saveTodo from './saveTodo';
 import getTodos from './todos';
 
-const deleteTodo = () => {
-  const trashIcons = document.querySelectorAll('.trash-icon');
-  trashIcons.forEach((trashIcon) => {
-    trashIcon.addEventListener('click', () => {
-      const index = trashIcon.id;
-      let todos = getTodos().filter((todo) => todo.index !== Number(index));
-      todos = todos.map((todo, i) => {
-        todo.index = i + 1;
-        return todo;
-      });
-
-      saveTodo(todos);
-      renderTodos();
+const deleteTD = ({ target }) => {
+  const index = target.closest('svg').id;
+  const todos = getTodos().filter((todo) => todo.index !== Number(index))
+    .map((todo, i) => {
+      todo.index = i + 1;
+      return todo;
     });
-  });
+
+  saveTodo(todos);
+  renderTodos();
 };
 
-export default deleteTodo;
+const addEventListenerForDelete = (trashIcon) => {
+  trashIcon.addEventListener('click', deleteTD);
+};
+const registerDeleteEventListener = () => {
+  const trashIcons = document.querySelectorAll('.trash-icon');
+  trashIcons.forEach(addEventListenerForDelete);
+};
+
+export default registerDeleteEventListener;

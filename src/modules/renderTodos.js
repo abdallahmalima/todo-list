@@ -1,8 +1,7 @@
-import clearCompleted from './clearCompletedTodo';
-import markCompletedTodo from './completeTodo';
-import deleteTodo from './deleteTodo';
+import registerMarkCompletedEventListener from './completeTodo';
+import registerDeleteEventListener from './deleteTodo';
 import getTodos from './todos';
-import updateTodo from './updateTodo';
+import registerUpdateEventListener from './updateTodo';
 
 const renderTodos = () => {
   const todoListContainer = document.querySelector('.todo-list');
@@ -22,10 +21,9 @@ const renderTodos = () => {
        </li>`
     )).join('');
   todoListContainer.innerHTML = `<ul> ${todosLists} </ul>`;
-  updateTodo();
-  deleteTodo();
-  markCompletedTodo();
-  clearCompleted();
+  registerUpdateEventListener();
+  registerDeleteEventListener();
+  registerMarkCompletedEventListener();
 };
 
 export default renderTodos;
