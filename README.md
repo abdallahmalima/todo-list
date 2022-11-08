@@ -10,6 +10,9 @@
 - HTML/CSS/Javascript
 - LInters
 
+## Live Demo
+[Live Demo Link](https://abdallahmalima.github.io/todo-list/dist/)
+
 ## Getting Started
 
 **Follow below steps to get the project run on your computer**
