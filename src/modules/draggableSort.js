@@ -19,7 +19,6 @@ const registerGraggableEventListeners = () => {
         currentDraggedOveritem.after(dragging);
       }
       cursorPos = e.clientY;
-      console.log(cursorPos);
     });
   });
 };
