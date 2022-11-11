@@ -15,7 +15,7 @@ const renderTodos = () => {
   const todoListContainer = document.querySelector('.todo-list');
   const todosLists = getTodos().sort((a, b) => a.index - b.index)
     .map(({ completed, description, index }) => (
-      ` <li class="todo-li" draggable="true">
+      ` <li class="todo-li" id="${index}" draggable="true">
         <div class="list-item">
           <input id="${index}" class="checkbox" type="checkbox" ${completed ? 'checked' : ''}>
           <p class="${completed ? 'completed' : ''}">${description}</p>

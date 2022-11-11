@@ -2,8 +2,8 @@ import renderTodos from './renderTodos';
 import saveTodo from './saveTodo';
 import getTodos from './todos';
 
-const deleteTD = ({ target }) => {
-  const index = target.closest('svg').id;
+const deleteTodoTest = (id) => {
+  const index = id;
   const todos = getTodos().filter((todo) => todo.index !== Number(index))
     .map((todo, i) => {
       todo.index = i + 1;
@@ -12,6 +12,11 @@ const deleteTD = ({ target }) => {
 
   saveTodo(todos);
   renderTodos();
+};
+
+const deleteTD = ({ target }) => {
+  const index = target.closest('svg').id;
+  deleteTodoTest(index);
 };
 
 const addEventListenerForDelete = (trashIcon) => {
@@ -23,3 +28,4 @@ const registerDeleteEventListener = () => {
 };
 
 export default registerDeleteEventListener;
+export {deleteTodoTest};

@@ -2,16 +2,16 @@ import saveTodo from './saveTodo';
 import getTodos from './todos';
 import renderTodos from './renderTodos';
 
-const validated = ({ description }, todos) => {
-  description = description.value.trim();
+const validated = (createTodoForm, todos) => {
+  const  description = createTodoForm.children[0].value.trim();
   if (description.length > 0) {
     return { description, completed: false, index: todos.length + 1 };
   }
   return null;
 };
 
-const resetForm = ({ description }) => {
-  description.value = '';
+const resetForm = (createTodoForm) => {
+  createTodoForm.children[0].value = '';
 };
 
 const addTodo = (createTodoForm) => {
