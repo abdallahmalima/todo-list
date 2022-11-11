@@ -3,7 +3,7 @@ import getTodos from './todos';
 import renderTodos from './renderTodos';
 
 const validated = (createTodoForm, todos) => {
-  const  description = createTodoForm.children[0].value.trim();
+  const description = createTodoForm.children[0].value.trim();
   if (description.length > 0) {
     return { description, completed: false, index: todos.length + 1 };
   }

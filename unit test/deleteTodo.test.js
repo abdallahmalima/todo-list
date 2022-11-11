@@ -9,7 +9,7 @@ describe('Add and delete Todo', () => {
   it('Add new todo', () => {
     localStorage.clear();
     createTodoDomMock('task 1');
-    let createTodoForm = document.querySelector('#todo-form');
+    const createTodoForm = document.querySelector('#todo-form');
     addTodo(createTodoForm);
     const listContainer = document.querySelector('ul');
 

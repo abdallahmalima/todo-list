@@ -28,4 +28,4 @@ const registerDeleteEventListener = () => {
 };
 
 export default registerDeleteEventListener;
-export {deleteTodoTest};
+export { deleteTodoTest };

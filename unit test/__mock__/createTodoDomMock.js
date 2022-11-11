@@ -1,5 +1,5 @@
-let createTodoDomMock=(value)=>{
-   document.body.innerHTML=`
+const createTodoDomMock = (value) => {
+  document.body.innerHTML = `
    <div class="wrapper">
    <div class="todo-title">
     <h1>Today's To Do</h1>
@@ -23,5 +23,5 @@ let createTodoDomMock=(value)=>{
    </div>
   </div>
    `;
-}
+};
 export default createTodoDomMock;
