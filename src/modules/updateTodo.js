@@ -25,23 +25,27 @@ const showUpdateUI = (target) => {
   todoContentContiner.appendChild(form);
 };
 
-const validated = ({ description }, books) => {
-  description = description.value.trim();
+const validated = (value) => {
+  const description = value.trim();
   if (description.length > 0) {
-    return { description, completed: false, index: books.length + 1 };
+    return { description, completed: false, index: 1 };
   }
   return null;
 };
 
-const update = (e) => {
-  e.preventDefault();
+const updateToDoTest = (id, description) => {
   const todos = getTodos();
-  const updatedTodo = validated(e.target, todos);
+  const updatedTodo = validated(description);
   if (updatedTodo === null) return;
-  const index = e.target.treeDotIcon.closest('svg').id;
+  const index = id;
   todos[index - 1].description = updatedTodo.description;
   saveTodo(todos);
   renderTodos();
+};
+
+const update = (e) => {
+  e.preventDefault();
+  updateToDoTest(e.target.treeDotIcon.closest('svg').id, e.target.children[0].value);
 };
 
 const addEventListenerForUpdateForm = ({ target }) => {
@@ -60,3 +64,4 @@ const registerUpdateEventListener = () => {
 };
 
 export default registerUpdateEventListener;
+export { updateToDoTest };

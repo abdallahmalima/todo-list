@@ -2,8 +2,8 @@ import renderTodos from './renderTodos';
 import saveTodo from './saveTodo';
 import getTodos from './todos';
 
-const markCompleted = ({ target }) => {
-  const index = Number(target.id);
+const markCompletedTest = (id) => {
+  const index = Number(id);
   const todos = getTodos();
 
   if (todos[index - 1].completed) {
@@ -16,6 +16,10 @@ const markCompleted = ({ target }) => {
   renderTodos();
 };
 
+const markCompleted = ({ target }) => {
+  markCompletedTest(target.id);
+};
+
 const addEventListenerForMarkCompleted = (checkbox) => {
   checkbox.addEventListener('click', markCompleted);
 };
@@ -25,3 +29,4 @@ const registerMarkCompletedEventListener = () => {
 };
 
 export default registerMarkCompletedEventListener;
+export { markCompletedTest };
